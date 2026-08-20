@@ -1,0 +1,188 @@
+---
+import '../../src/styles/global.css';
+
+const SIGNUP_URL = 'https://docs.google.com/forms/d/e/REPLACE_WITH_WORKSHOP_SIGNUP_FORM/viewform';
+
+const schedule = [
+  ['09:30–10:45', 'Opening & talks', 'Welcome, logistics, and two invited talks.'],
+  ['10:45–11:05', 'Boba-making demonstration', 'A practical introduction to preparation techniques.'],
+  ['11:05–12:20', 'Task 1: Flavor entity creation', 'Taste ingredients, describe experiences, and meet the Flavor Wiki.'],
+  ['12:20–14:00', 'Task 2: Ingredient-led boba design', 'Design, document, prepare, and taste a drink around an anchor ingredient.'],
+  ['14:00–15:30', 'Task 3: Memory- or theme-driven boba', 'Translate a shared memory or theme into a boba concept.'],
+  ['15:30–16:15', 'Sharing & open tasting', 'Present drinks, taste across groups, and annotate the Flavor Wiki.'],
+  ['16:15–17:30', 'Discussion & closing', 'Reflect together and identify future research directions.'],
+];
+
+const organizers = [
+  ['Po-Yu Chen', 'National Taiwan University', 'Taipei, Taiwan'],
+  ['Eunsol Choi', 'MIT CSAIL', 'Cambridge, MA, USA'],
+  ['Takuji Narumi', 'University of Tokyo', 'Tokyo, Japan'],
+  ['Paul Pu Liang', 'MIT Media Lab / MIT EECS', 'Cambridge, MA, USA'],
+  ['Jas Brooks', 'MIT CSAIL', 'Cambridge, MA, USA'],
+  ['Lung-Pan Cheng', 'National Taiwan University', 'Taipei, Taiwan'],
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Bobapedia: a UIST '26 workshop on archiving living flavor experiences." />
+    <title>Bobapedia — Archiving Living Flavor Experiences</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Bobapedia home">Bobapedia<span>✦</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#organizers">Organizers</a>
+        <a class="nav-cta" href="#signup">Sign up</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">UIST ’26 workshop · Detroit · November 2–5, 2026</p>
+          <h1>What does your<br /><em>flavor</em> remember?</h1>
+          <p class="hero-intro">
+            A full-day participatory workshop exploring how computational interfaces
+            can help communities document, share, and collaboratively create flavor
+            experiences through boba tea.
+          </p>
+          <a class="button button-primary" href="#signup">Join the workshop <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a boba tea and flavor notes" role="img">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="tea-cup">
+            <div class="tea-lid"></div>
+            <div class="tea">
+              <span class="ice ice-one"></span><span class="ice ice-two"></span><span class="ice ice-three"></span>
+              <span class="boba boba-one"></span><span class="boba boba-two"></span><span class="boba boba-three"></span>
+              <span class="boba boba-four"></span><span class="boba boba-five"></span>
+            </div>
+            <div class="straw"></div>
+          </div>
+          <span class="art-note note-one">memory</span>
+          <span class="art-note note-two">culture</span>
+          <span class="art-note note-three">taste</span>
+        </div>
+      </section>
+
+      <section class="meta-strip">
+        <div><span class="meta-label">Format</span><strong>Full-day workshop</strong></div>
+        <div><span class="meta-label">Participants</span><strong>Approximately 30</strong></div>
+        <div><span class="meta-label">Experience</span><strong>No culinary skills required</strong></div>
+      </section>
+
+      <section class="section-shell section-grid" id="about">
+        <div>
+          <p class="eyebrow">01 — The invitation</p>
+          <h2>Flavor is more than a recipe.</h2>
+        </div>
+        <div class="prose">
+          <p>
+            Flavor is embodied, multimodal, and culturally situated. Yet computational
+            flavor systems often reduce food to ingredients, chemical compounds, recipe
+            corpora, or recommendations.
+          </p>
+          <p>
+            Bobapedia makes space for the subjective. With an LLM-supported Flavor Wiki,
+            participants record sensory impressions, personal associations, and cultural
+            interpretations before designing drinks together.
+          </p>
+          <blockquote>How might computational interfaces help communities articulate, share, and iteratively refine their personal interpretations of taste?</blockquote>
+        </div>
+      </section>
+
+      <section class="tinted-section" id="activities">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">02 — The experience</p>
+            <h2>Taste. Articulate.<br /><em>Recompose.</em></h2>
+          </div>
+          <div class="activity-grid">
+            <article class="activity-card"><span class="card-number">01</span><h3>Notice</h3><p>Taste and smell ingredients, then describe sensory attributes, memories, and cultural references.</p></article>
+            <article class="activity-card"><span class="card-number">02</span><h3>Make meaning</h3><p>Record your experience in the Flavor Wiki and compare how different people interpret the same flavor.</p></article>
+            <article class="activity-card"><span class="card-number">03</span><h3>Create together</h3><p>Design, prepare, and taste boba drinks inspired by ingredients, memories, and shared themes.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell schedule-section" id="schedule">
+        <div class="section-heading">
+          <p class="eyebrow">03 — A day in the workshop</p>
+          <h2>From first sip<br /><em>to shared archive.</em></h2>
+        </div>
+        <div class="schedule-list" aria-label="Workshop schedule">
+          {schedule.map(([time, title, description]) => (
+            <div class="schedule-row">
+              <time>{time}</time>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="tinted-section logistics-section">
+        <div class="section-shell two-column">
+          <div>
+            <p class="eyebrow">04 — Come as you are</p>
+            <h2>A place for curious people.</h2>
+          </div>
+          <div class="logistics-copy">
+            <p>We welcome people working across Human–Food Interaction, multisensory HCI, human–AI co-creation, computational flavor, culinary practice, and digital gastronomy.</p>
+            <div class="tag-list"><span>Researchers</span><span>Designers</span><span>Practitioners</span><span>Curious eaters</span></div>
+            <p class="small-note">The workshop includes tasting and small-serving food preparation. Vegan, halal, low-sugar, and other dietary alternatives will be planned where possible. Final ingredient and allergen information will be published when confirmed.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="organizers">
+        <div class="section-heading">
+          <p class="eyebrow">05 — The people behind Bobapedia</p>
+          <h2>Made across<br /><em>disciplines and places.</em></h2>
+        </div>
+        <div class="organizer-grid">
+          {organizers.map(([name, institution, location]) => (
+            <article class="organizer"><h3>{name}</h3><p>{institution}</p><span>{location}</span></article>
+          ))}
+        </div>
+      </section>
+
+      <section class="outcomes-section">
+        <div class="section-shell two-column">
+          <div>
+            <p class="eyebrow">06 — What we will leave with</p>
+            <h2>A living record<br />of <em>flavor.</em></h2>
+          </div>
+          <ul class="outcome-list">
+            <li>A collaboratively edited Flavor Wiki</li>
+            <li>Annotated ingredient entries and boba-tea concepts</li>
+            <li>Sensory, cultural, and narrative design reasoning</li>
+            <li>A research agenda for embodied flavor and human–AI creativity</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="signup-section section-shell" id="signup">
+        <div class="signup-card">
+          <p class="eyebrow">Ready to taste differently?</p>
+          <h2>Save your seat<br /><em>at the table.</em></h2>
+          <p>Registration details are coming soon. Use the button below when the sign-up form is ready.</p>
+          <a class="button button-dark" href={SIGNUP_URL} target="_blank" rel="noreferrer">Sign up for Bobapedia <span aria-hidden="true">↗</span></a>
+          <p class="placeholder-note">Google Sheets registration link — placeholder for now</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <span class="wordmark">Bobapedia<span>✦</span></span>
+      <span>UIST ’26 · Detroit, MI</span>
+      <span>Contact details coming soon</span>
+    </footer>
+  </body>
+</html>
