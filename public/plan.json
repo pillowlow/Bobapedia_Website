@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": 7,
+      "filename": "bobatea-art-collage-7.png",
+      "prompt": "Create a paper collage art piece titled 'Bobapedia' that merges the shapes of boba tea and documents. Use a color palette of dark gray (#3C3C3C), light beige (#E6D89C), soft green (#96DE92), and pastel pink (#E7888A). The composition should be centered with a clean, transparent background, emphasizing the playful interaction between the boba tea elements and the document shapes.",
+      "ref_image": "",
+      "status": "approved",
+      "provider": "flux",
+      "gen_mode": "generate"
+    },
+    {
+      "id": 8,
+      "filename": "bobatea-art-collage-8.png",
+      "prompt": "Create a paper collage art piece titled 'Bobapedia' that merges the shapes of boba tea and documents. Use a color palette of dark gray (#3C3C3C), light beige (#E6D89C), soft green (#96DE92), and pastel pink (#E7888A). The composition should be centered with a clean, transparent background, emphasizing the playful interaction between the boba tea elements and the document shapes.",
+      "ref_image": "",
+      "status": "approved",
+      "provider": "flux",
+      "gen_mode": "generate"
+    },
+    {
+      "id": 9,
+      "filename": "bobatea-art-collage-9.png",
+      "prompt": "Create a paper collage art piece titled 'Bobapedia' that merges the shapes of boba tea and documents. Use a color palette of dark gray (#3C3C3C), light beige (#E6D89C), soft green (#96DE92), and pastel pink (#E7888A). The composition should be centered with a clean, transparent background, emphasizing the playful interaction between the boba tea elements and the document shapes.",
+      "ref_image": "",
+      "status": "approved",
+      "provider": "flux",
+      "gen_mode": "generate"
+    },
+    {
+      "id": 10,
+      "filename": "bobatea-art-collage-10.png",
+      "prompt": "Create a paper collage art piece titled 'Bobapedia' that merges the shapes of boba tea and documents. Use a color palette of dark gray (#3C3C3C), light beige (#E6D89C), soft green (#96DE92), and pastel pink (#E7888A). The composition should be centered with a clean, transparent background, emphasizing the playful interaction between the boba tea elements and the document shapes.",
+      "ref_image": "",
+      "status": "approved",
+      "provider": "flux",
+      "gen_mode": "generate"
+    },
+    {
+      "id": 4,
+      "filename": "bobatea-collage-style-4.png",
+      "prompt": "Create a paper collage art piece titled 'Bobapedia' that merges the shapes of boba tea and documents. Use a color palette of #3C3C3C, #E6D89C, #96DE92, and #E7888A. The composition should be centered with a clean and transparent background, presenting an innovative combination of boba tea and document shapes in a new artistic interpretation.",
+      "ref_image": "",
+      "status": "approved",
+      "provider": "flux",
+      "gen_mode": "generate"
+    }
+  ],
+  "output_dir": "/projects/Bobapedia_Website/public",
+  "target_dir": "/projects/Bobapedia_Website/public",
+  "task": "i want to do a art image for 'Bobatea\"  , basically it will be a paper collage art sytle  that have color them of 3C3C3C, E6D89C, 96DE92, E7888A. the background should be clean and transparent. and aligm to the center. and the titke of this work is \"bobapedia\". try to merge the shape of boba tea and documents.",
+  "target_count": 4
+}

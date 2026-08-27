@@ -1,7 +1,8 @@
 ---
 import '../../src/styles/global.css';
 
-const SIGNUP_URL = 'https://docs.google.com/forms/d/e/REPLACE_WITH_WORKSHOP_SIGNUP_FORM/viewform';
+const SIGNUP_URL = 'https://forms.gle/m2g5yZwbG3bTAeZd7';
+const BASE_URL = import.meta.env.BASE_URL;
 
 const schedule = [
   ['09:30–10:45', 'Opening & talks', 'Welcome, logistics, and two invited talks.'],
@@ -14,12 +15,12 @@ const schedule = [
 ];
 
 const organizers = [
-  ['Po-Yu Chen', 'National Taiwan University', 'Taipei, Taiwan'],
-  ['Eunsol Choi', 'MIT CSAIL', 'Cambridge, MA, USA'],
-  ['Takuji Narumi', 'University of Tokyo', 'Tokyo, Japan'],
-  ['Paul Pu Liang', 'MIT Media Lab / MIT EECS', 'Cambridge, MA, USA'],
-  ['Jas Brooks', 'MIT CSAIL', 'Cambridge, MA, USA'],
-  ['Lung-Pan Cheng', 'National Taiwan University', 'Taipei, Taiwan'],
+  ['Po-Yu Chen', 'National Taiwan University', 'Taipei, Taiwan', 'https://pillowlowchen.com/'],
+  ['Eunsol Choi', 'MIT CSAIL', 'Cambridge, MA, USA', 'https://sol-choi.com/'],
+  ['Takuji Narumi', 'University of Tokyo', 'Tokyo, Japan', 'https://dblp.org/pid/33/5349.html'],
+  ['Paul Pu Liang', 'MIT Media Lab / MIT EECS', 'Cambridge, MA, USA', 'https://pliang279.github.io/'],
+  ['Jas Brooks', 'MIT CSAIL', 'Cambridge, MA, USA', 'https://jasbrooks.com/'],
+  ['Lung-Pan Cheng', 'National Taiwan University', 'Taipei, Taiwan', 'https://www.lungpancheng.tw/'],
 ];
 ---
 
@@ -32,7 +33,7 @@ const organizers = [
   </head>
   <body>
     <header class="site-header">
-      <a class="wordmark" href="/" aria-label="Bobapedia home">Bobapedia<span>✦</span></a>
+      <a class="wordmark" href={BASE_URL} aria-label="Bobapedia home">Bobapedia<span>✦</span></a>
       <nav aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#schedule">Schedule</a>
@@ -44,7 +45,7 @@ const organizers = [
     <main>
       <section class="hero section-shell">
         <div class="hero-copy">
-          <p class="eyebrow">UIST ’26 workshop · Detroit · November 2–5, 2026</p>
+          <p class="eyebrow"><a href="https://uist.acm.org/2026/" target="_blank" rel="noreferrer">UIST ’26 workshop</a> · Detroit · November 2–5, 2026</p>
           <h1>What does your<br /><em>flavor</em> remember?</h1>
           <p class="hero-intro">
             A full-day participatory workshop exploring how computational interfaces
@@ -53,21 +54,12 @@ const organizers = [
           </p>
           <a class="button button-primary" href="#signup">Join the workshop <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="hero-art" aria-label="Illustration of a boba tea and flavor notes" role="img">
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="tea-cup">
-            <div class="tea-lid"></div>
-            <div class="tea">
-              <span class="ice ice-one"></span><span class="ice ice-two"></span><span class="ice ice-three"></span>
-              <span class="boba boba-one"></span><span class="boba boba-two"></span><span class="boba boba-three"></span>
-              <span class="boba boba-four"></span><span class="boba boba-five"></span>
-            </div>
-            <div class="straw"></div>
-          </div>
-          <span class="art-note note-one">memory</span>
-          <span class="art-note note-two">culture</span>
-          <span class="art-note note-three">taste</span>
+        <div class="hero-art">
+          <img
+            class="hero-collage"
+            src={`${BASE_URL}/bobatea-collage-style-4-no-bg.png`}
+            alt="Bobapedia collage combining boba tea and annotated documents"
+          />
         </div>
       </section>
 
@@ -75,6 +67,18 @@ const organizers = [
         <div><span class="meta-label">Format</span><strong>Full-day workshop</strong></div>
         <div><span class="meta-label">Participants</span><strong>Approximately 30</strong></div>
         <div><span class="meta-label">Experience</span><strong>No culinary skills required</strong></div>
+      </section>
+
+      <section class="signup-section section-shell" id="signup">
+        <div class="signup-card">
+          <p class="eyebrow">Ready to taste differently?</p>
+          <h2>Save your seat<br /><em>at the table.</em></h2>
+          <p>Join the conversation, or read the workshop paper to learn more about the day.</p>
+          <div class="cta-actions">
+            <a class="button button-dark" href={SIGNUP_URL} target="_blank" rel="noreferrer">Sign up for Bobapedia <span aria-hidden="true">↗</span></a>
+            <a class="button button-paper" href={`${BASE_URL}/uistadjunct26-210.pdf`} download>Download workshop paper <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
       </section>
 
       <section class="section-shell section-grid" id="about">
@@ -127,7 +131,7 @@ const organizers = [
         </div>
       </section>
 
-      <section class="tinted-section logistics-section">
+      <section class="tinted-section paper-texture logistics-section">
         <div class="section-shell two-column">
           <div>
             <p class="eyebrow">04 — Come as you are</p>
@@ -147,8 +151,8 @@ const organizers = [
           <h2>Made across<br /><em>disciplines and places.</em></h2>
         </div>
         <div class="organizer-grid">
-          {organizers.map(([name, institution, location]) => (
-            <article class="organizer"><h3>{name}</h3><p>{institution}</p><span>{location}</span></article>
+          {organizers.map(([name, institution, location, website]) => (
+            <article class="organizer"><h3><a href={website} target="_blank" rel="noreferrer">{name}</a></h3><p>{institution}</p><span>{location}</span></article>
           ))}
         </div>
       </section>
@@ -168,15 +172,6 @@ const organizers = [
         </div>
       </section>
 
-      <section class="signup-section section-shell" id="signup">
-        <div class="signup-card">
-          <p class="eyebrow">Ready to taste differently?</p>
-          <h2>Save your seat<br /><em>at the table.</em></h2>
-          <p>Registration details are coming soon. Use the button below when the sign-up form is ready.</p>
-          <a class="button button-dark" href={SIGNUP_URL} target="_blank" rel="noreferrer">Sign up for Bobapedia <span aria-hidden="true">↗</span></a>
-          <p class="placeholder-note">Google Sheets registration link — placeholder for now</p>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer section-shell">
