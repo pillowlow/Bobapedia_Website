@@ -2,6 +2,7 @@
 import '../../src/styles/global.css';
 
 const SIGNUP_URL = 'https://forms.gle/m2g5yZwbG3bTAeZd7';
+const UIST_WORKSHOP_URL = 'https://uist.acm.org/2026/attending/#full-conference--workshop';
 const BASE_URL = import.meta.env.BASE_URL;
 
 const schedule = [
@@ -15,12 +16,12 @@ const schedule = [
 ];
 
 const organizers = [
-  ['Po-Yu Chen', 'National Taiwan University', 'Taipei, Taiwan', 'https://pillowlowchen.com/'],
-  ['Eunsol Choi', 'MIT CSAIL', 'Cambridge, MA, USA', 'https://sol-choi.com/'],
-  ['Takuji Narumi', 'University of Tokyo', 'Tokyo, Japan', 'https://dblp.org/pid/33/5349.html'],
-  ['Paul Pu Liang', 'MIT Media Lab / MIT EECS', 'Cambridge, MA, USA', 'https://pliang279.github.io/'],
-  ['Jas Brooks', 'MIT CSAIL', 'Cambridge, MA, USA', 'https://jasbrooks.com/'],
-  ['Lung-Pan Cheng', 'National Taiwan University', 'Taipei, Taiwan', 'https://www.lungpancheng.tw/'],
+  ['Po-Yu Chen', 'National Taiwan University', 'Taipei, Taiwan', 'https://pillowlowchen.com/', 'poyu.jpg'],
+  ['Eunsol Choi', 'MIT CSAIL', 'Cambridge, MA, USA', 'https://sol-choi.com/', 'sol.jpg'],
+  ['Takuji Narumi', 'University of Tokyo', 'Tokyo, Japan', 'https://dblp.org/pid/33/5349.html', 'narumi_takuji.jpg'],
+  ['Paul Pu Liang', 'MIT Media Lab / MIT EECS', 'Cambridge, MA, USA', 'https://pliang279.github.io/', 'paul-liang-headshot-small.jpg'],
+  ['Jas Brooks', 'MIT CSAIL', 'Cambridge, MA, USA', 'https://jasbrooks.com/', 'jasborrks.jpg'],
+  ['Lung-Pan Cheng', 'National Taiwan University', 'Taipei, Taiwan', 'https://www.lungpancheng.tw/', 'lung_pan.jpg'],
 ];
 ---
 
@@ -31,7 +32,7 @@ const organizers = [
     <meta name="description" content="Bobapedia: a UIST '26 workshop on archiving living flavor experiences." />
     <title>Bobapedia — Archiving Living Flavor Experiences</title>
   </head>
-  <body>
+  <body style={`--texture-url: url("${BASE_URL}/bw-paper-texture.png")`}>
     <header class="site-header">
       <a class="wordmark" href={BASE_URL} aria-label="Bobapedia home">Bobapedia<span>✦</span></a>
       <nav aria-label="Main navigation">
@@ -52,7 +53,12 @@ const organizers = [
             can help communities document, share, and collaboratively create flavor
             experiences through boba tea.
           </p>
-          <a class="button button-primary" href="#signup">Join the workshop <span aria-hidden="true">↗</span></a>
+          <div class="cta-actions hero-actions">
+            <a class="button button-primary" href={UIST_WORKSHOP_URL} target="_blank" rel="noreferrer">Register the workshop <span aria-hidden="true">↗</span></a>
+            <a class="button button-sheet" href={SIGNUP_URL} target="_blank" rel="noreferrer">Sign-up sheet <span aria-hidden="true">↗</span></a>
+            <a class="button button-paper" href={`${BASE_URL}/uistadjunct26-210.pdf`} download>Download paper <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="signup-note">The sign-up sheet helps us learn more about you before the workshop.</p>
         </div>
         <div class="hero-art">
           <img
@@ -69,19 +75,7 @@ const organizers = [
         <div><span class="meta-label">Experience</span><strong>No culinary skills required</strong></div>
       </section>
 
-      <section class="signup-section section-shell" id="signup">
-        <div class="signup-card">
-          <p class="eyebrow">Ready to taste differently?</p>
-          <h2>Save your seat<br /><em>at the table.</em></h2>
-          <p>Join the conversation, or read the workshop paper to learn more about the day.</p>
-          <div class="cta-actions">
-            <a class="button button-dark" href={SIGNUP_URL} target="_blank" rel="noreferrer">Sign up for Bobapedia <span aria-hidden="true">↗</span></a>
-            <a class="button button-paper" href={`${BASE_URL}/uistadjunct26-210.pdf`} download>Download workshop paper <span aria-hidden="true">↓</span></a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell section-grid" id="about">
+      <section class="section-shell section-grid merged-content" id="about">
         <div>
           <p class="eyebrow">01 — The invitation</p>
           <h2>Flavor is more than a recipe.</h2>
@@ -98,27 +92,32 @@ const organizers = [
             interpretations before designing drinks together.
           </p>
           <blockquote>How might computational interfaces help communities articulate, share, and iteratively refine their personal interpretations of taste?</blockquote>
+          <p class="meta-label outcome-label">What we leave with</p>
+          <ul class="outcome-list">
+            <li>A collaboratively edited Flavor Wiki</li>
+            <li>Annotated ingredient entries and boba-tea concepts</li>
+            <li>Sensory, cultural, and narrative design reasoning</li>
+            <li>A research agenda for embodied flavor and human–AI creativity</li>
+          </ul>
         </div>
       </section>
 
       <section class="tinted-section" id="activities">
         <div class="section-shell">
           <div class="section-heading">
-            <p class="eyebrow">02 — The experience</p>
-            <h2>Taste. Articulate.<br /><em>Recompose.</em></h2>
+            <h2>The Process</h2>
           </div>
           <div class="activity-grid">
-            <article class="activity-card"><span class="card-number">01</span><h3>Notice</h3><p>Taste and smell ingredients, then describe sensory attributes, memories, and cultural references.</p></article>
-            <article class="activity-card"><span class="card-number">02</span><h3>Make meaning</h3><p>Record your experience in the Flavor Wiki and compare how different people interpret the same flavor.</p></article>
-            <article class="activity-card"><span class="card-number">03</span><h3>Create together</h3><p>Design, prepare, and taste boba drinks inspired by ingredients, memories, and shared themes.</p></article>
+            <article class="activity-card"><img src={`${BASE_URL}/notice.png`} alt="Workshop participants noticing the sensory qualities of ingredients" /><span class="card-number">01</span><h3>Notice</h3><p>Taste and smell ingredients, then describe sensory attributes, memories, and cultural references.</p></article>
+            <article class="activity-card"><img src={`${BASE_URL}/make_meaning.png`} alt="Workshop participants recording and comparing flavor meanings" /><span class="card-number">02</span><h3>Make meaning</h3><p>Record your experience in the Flavor Wiki and compare how different people interpret the same flavor.</p></article>
+            <article class="activity-card"><img src={`${BASE_URL}/create_together.png`} alt="Workshop participants creating boba together" /><span class="card-number">03</span><h3>Create together</h3><p>Design, prepare, and taste boba drinks inspired by ingredients, memories, and shared themes.</p></article>
           </div>
         </div>
       </section>
 
       <section class="section-shell schedule-section" id="schedule">
         <div class="section-heading">
-          <p class="eyebrow">03 — A day in the workshop</p>
-          <h2>From first sip<br /><em>to shared archive.</em></h2>
+          <h2>Schedule</h2>
         </div>
         <div class="schedule-list" aria-label="Workshop schedule">
           {schedule.map(([time, title, description]) => (
@@ -131,44 +130,26 @@ const organizers = [
         </div>
       </section>
 
-      <section class="tinted-section paper-texture logistics-section">
-        <div class="section-shell two-column">
-          <div>
-            <p class="eyebrow">04 — Come as you are</p>
-            <h2>A place for curious people.</h2>
-          </div>
-          <div class="logistics-copy">
-            <p>We welcome people working across Human–Food Interaction, multisensory HCI, human–AI co-creation, computational flavor, culinary practice, and digital gastronomy.</p>
-            <div class="tag-list"><span>Researchers</span><span>Designers</span><span>Practitioners</span><span>Curious eaters</span></div>
-            <p class="small-note">The workshop includes tasting and small-serving food preparation. Vegan, halal, low-sugar, and other dietary alternatives will be planned where possible. Final ingredient and allergen information will be published when confirmed.</p>
-          </div>
-        </div>
+      <section class="meta-strip paper-texture logistics-strip" id="logistics">
+        <div class="logistics-intro"><span class="meta-label">Who it is for</span><strong>Come curious about flavor, food, and multisensory interaction.</strong></div>
+        <div><span class="meta-label">01</span><strong>Researchers</strong></div>
+        <div><span class="meta-label">02</span><strong>Designers</strong></div>
+        <div><span class="meta-label">03</span><strong>Practitioners</strong></div>
       </section>
 
       <section class="section-shell" id="organizers">
         <div class="section-heading">
-          <p class="eyebrow">05 — The people behind Bobapedia</p>
-          <h2>Made across<br /><em>disciplines and places.</em></h2>
+          <h2>Organizers</h2>
         </div>
         <div class="organizer-grid">
-          {organizers.map(([name, institution, location, website]) => (
-            <article class="organizer"><h3><a href={website} target="_blank" rel="noreferrer">{name}</a></h3><p>{institution}</p><span>{location}</span></article>
+          {organizers.map(([name, institution, location, website, image]) => (
+            <article class="organizer">
+              <img src={`${BASE_URL}/${image}`} alt={`${name} headshot`} />
+              <h3><a href={website} target="_blank" rel="noreferrer">{name}</a></h3>
+              <p>{institution}</p>
+              <span>{location}</span>
+            </article>
           ))}
-        </div>
-      </section>
-
-      <section class="outcomes-section">
-        <div class="section-shell two-column">
-          <div>
-            <p class="eyebrow">06 — What we will leave with</p>
-            <h2>A living record<br />of <em>flavor.</em></h2>
-          </div>
-          <ul class="outcome-list">
-            <li>A collaboratively edited Flavor Wiki</li>
-            <li>Annotated ingredient entries and boba-tea concepts</li>
-            <li>Sensory, cultural, and narrative design reasoning</li>
-            <li>A research agenda for embodied flavor and human–AI creativity</li>
-          </ul>
         </div>
       </section>
 
