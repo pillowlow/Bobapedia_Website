@@ -42,7 +42,7 @@ h1 em, h2 em { color: var(--pink); font-family: var(--serif); font-weight: 500; 
 .button-dark:hover, .button-dark:focus-visible { background: var(--green-ink); }
 .hero-art { display: grid; place-items: center; min-height: 460px; }
 .hero-collage { display: block; width: min(100%, 520px); height: auto; margin: 0 auto; }
-.meta-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 28px max(24px, calc((100vw - 1120px) / 2)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.meta-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; padding: 28px max(24px, calc((100vw - 1120px) / 2)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .meta-strip > div { display: flex; flex-direction: column; gap: 7px; }.meta-label { margin: 0; color: var(--green-ink); font-size: .62rem; }.meta-strip strong { font-size: .9rem; font-weight: 500; }
 .logistics-strip { grid-template-columns: 1.7fr repeat(3, 1fr); }.logistics-intro strong { max-width: 300px; }
 .section-grid, .two-column { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; padding-top: 135px; padding-bottom: 135px; }
